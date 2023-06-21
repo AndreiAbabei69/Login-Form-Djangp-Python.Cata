@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign Up</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-style: italic;
+            margin-top: 20px;
+            color: #ffeb3b;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"],
+        .container input[type="email"] {
+            width: 100%;
+            margin: 8px -8px;
+            padding: 8px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 12px;
+            
+        }
+
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #ffeb3b;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #ffeb3b;
+            background-image: linear-gradient(to right, #ffeb3b, #ff6347);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sign Up</h2>
+
+    <form action="/signup" method="post">
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers)" required>
+        <br>
+        <label for="">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" required>
+        <br>
+        <label for="">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name" required>
+        <br>
+        <label for="">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
+        <br>
+        <label for="">Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="Create a Password" required>
+        <br>
+        <label for="">Confirm Your Password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Confirm Your Password" required>
+        <br>
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
+
+</body>
+</html>
