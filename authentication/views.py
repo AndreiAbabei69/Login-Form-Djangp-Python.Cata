@@ -18,7 +18,7 @@ from django.utils.encoding import force_str
 
 # Create your views here.
 def home(request):
-    return render(request, "authentication/index.html")
+    return render(request, "authentication/signin.html")
 
 def signup(request):
 

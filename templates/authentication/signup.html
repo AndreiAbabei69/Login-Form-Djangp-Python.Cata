@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sign Up</title>
+    <link rel="icon" type="image/gif" href="https://logowik.com/content/uploads/images/pwc-price-waterhouse-coopers7478.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -12,25 +13,38 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
         }
 
         h2 {
             font-size: 30px;
             font-style: italic;
-            margin-top: 20px;
+            margin-top: 40px;
             color: #ffeb3b;
-            text-align: center;
+            text-align: centerW;
         }
 
         .container {
-            max-width: 400px;
+            max-width: 415px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #000;
+            background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            position: center;
+            margin: auto;
+            top: 0;
+            left: 0;
+            width: 165px; /* Adjust the width of the logo */
+            height: 165px; /* Adjust the height of the logo */
+            background-image: url("https://logowik.com/content/uploads/images/pwc-price-waterhouse-coopers7478.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .container h2 {
@@ -42,20 +56,23 @@
         .container input[type="password"],
         .container input[type="email"] {
             width: 100%;
-            margin: 8px -8px;
+            margin: 10px -10px;
             padding: 8px;
             margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            border-radius: 12px;
+            border-color: orange;
+            background-color: #fff;
             padding-left: 12px;
+            color: #000;
             
         }
 
         .container input[type="submit"] {
-            width: 100%;
+            width: 105%;
+            margin: -5px;
             padding: 10px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 12px;
             background-color: #ffeb3b;
             color: #000;
             border: none;
@@ -67,12 +84,35 @@
             background-color: #ffeb3b;
             background-image: linear-gradient(to right, #ffeb3b, #ff6347);
         }
+
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+          }
+          a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+          }
+          a:hover {
+            color: #ff6347;
+            background-color: transparent;
+            text-decoration: underline;
+          }
+          a:active {
+            color: #ffeb3b;
+            background-color: transparent;
+            text-decoration: underline;
+          }
+
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Sign Up</h2>
+    <div class="logo"></div>
+    <h2></h2>
 
     <form action="/signup" method="post">
         {% csrf_token %}
@@ -94,6 +134,7 @@
         <label for="">Confirm Your Password</label>
         <input type="password" id="pass2" name="pass2" placeholder="Confirm Your Password" required>
         <br>
+        <p><a href="/signin">Back to Login Page.</a></p>
         <input type="submit" value="Sign Up">
     </form>
 </div>
