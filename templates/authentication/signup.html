@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sign Up</title>
+    <link rel="icon" type="image/gif" href="https://logowik.com/content/uploads/images/pwc-price-waterhouse-coopers7478.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         /* Add your custom styles here */
+
+        :root {
+            --width: 450px;
+            --gray: #bdc3c7;
+            --lightgray: #ecf0f1;
+            --blue: #3498db;
+            --white: #FFFFFF;
+            --fsize: 18px;
+        
+            --invalidInput: rgba(192, 57, 43, 0.85);
+            --validInput: rgba(39, 174, 96, 0.85);
+            --invalid: rgba(192, 57, 43, 1);
+            --valid: rgba(39, 174, 96, 1);
+        
+            --inputLightGray: #ECF0F1;
+            --inputMedGray: #BDC3C7;
+            --inputMedDarkGray: #7F8C8D;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
         }
 
         h2 {
             font-size: 30px;
             font-style: italic;
-            margin-top: 20px;
+            margin-top: 40px;
             color: #ffeb3b;
-            text-align: center;
+            text-align: centerW;
         }
 
         .container {
-            max-width: 400px;
+            max-width: 415px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #000;
+            background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            position: center;
+            margin: auto;
+            top: 0;
+            left: 0;
+            width: 165px; /* Adjust the width of the logo */
+            height: 165px; /* Adjust the height of the logo */
+            background-image: url("https://logowik.com/content/uploads/images/pwc-price-waterhouse-coopers7478.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .container h2 {
@@ -42,20 +76,23 @@
         .container input[type="password"],
         .container input[type="email"] {
             width: 100%;
-            margin: 8px -8px;
+            margin: 10px -10px;
             padding: 8px;
             margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            border-radius: 12px;
+            border-color: orange;
+            background-color: #fff;
             padding-left: 12px;
+            color: #000;
             
         }
 
         .container input[type="submit"] {
-            width: 100%;
+            width: 105%;
+            margin: -5px;
             padding: 10px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 12px;
             background-color: #ffeb3b;
             color: #000;
             border: none;
@@ -67,36 +104,258 @@
             background-color: #ffeb3b;
             background-image: linear-gradient(to right, #ffeb3b, #ff6347);
         }
+
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff6347;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #ffeb3b;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        /* Requirements list */
+        .req-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        /* form */
+        .form-container input {
+            background-color: var(--gray);
+            border: 0;
+            padding: 3px 10px;
+            margin: 5px 0;
+            font-size: var(--fsize);
+            width: 150px;
+            box-shadow: 3px 3px 0 0 var(--inputLightGray);
+        }
+        
+        .form-container input:focus {
+            background-color: var(--lightgray);
+            box-shadow: 3px 3px 0 0 var(--inputMedGray);
+            outline: none;
+        }
+        
+        .form-container input.invalid {
+            background: var(--invalidInput);
+        }
+        
+        .form-container button {
+            border: 0;
+            margin: 5px 0;
+            background-color: var(--gray);
+            font-size: var(--fsize);
+            box-shadow: 3px 3px 0 0 var(--inputLightGray);
+        }
+        
+        .form-container button:focus {
+            box-shadow: none;
+            outline: none;
+            box-shadow: 3px 3px 0 0 var(--inputMedDarkGray);
+        }
+        
+        .form-container button:hover {
+            background-color: var(--lightgray);
+            box-shadow: 3px 3px 0 0 var(--inputMedGray);
+        }
+        
+        .form-container button.valid {
+            transition: all 0.75s ease;
+            background-color: var(--validInput);
+        }
+        
+        input::-webkit-input-placeholder {
+            color: var(--white);
+        }
+        
+        input:focus::-webkit-input-placeholder {
+            color: var(--inputLightGray);
+        }
+        
+        input::-moz-placeholder {
+            color: var(--white);
+        }
+        
+        input:focus::-moz-placeholder {
+            color: var(--inputLightGray);
+        }
+        
+        /* req list */
+        .req-container ul li {
+            font-size: var(--fsize);
+            padding: 2.5px 0;
+        }
+        
+        .req-container ul li .glyphicon {
+            transition: all 0.75s ease;
+            float: left;
+        }
+        
+        .req-container ul li .glyphicon.invalid {
+            color: var(--invalid);
+        }
+        
+        .req-container ul li .glyphicon.valid {
+            color: var(--valid);
+            font-size: calc(var(--fsize) * 1.25);
+            transform: rotate(360deg);
+        }
+        
+        /* containers */
+        #main-container {
+            width: var(--width);
+            padding: 15px;
+        }
+        
+        .form-container {
+            float: left;
+        }
+        
+        .req-container {
+            float: left;
+            padding-left: 15px;
+        }
+
+        
     </style>
 </head>
 <body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div class="container">
-    <h2>Sign Up</h2>
+    <div class="container">
+        <div class="logo"></div>
+        <h2></h2>
 
-    <form action="/signup" method="post">
-        {% csrf_token %}
-        <label for="">Username</label>
-        <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers)" required>
-        <br>
-        <label for="">First Name</label>
-        <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" required>
-        <br>
-        <label for="">Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name" required>
-        <br>
-        <label for="">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
-        <br>
-        <label for="">Password</label>
-        <input type="password" id="pass1" name="pass1" placeholder="Create a Password" required>
-        <br>
-        <label for="">Confirm Your Password</label>
-        <input type="password" id="pass2" name="pass2" placeholder="Confirm Your Password" required>
-        <br>
-        <input type="submit" value="Sign Up">
-    </form>
-</div>
+        <form action="/signup" method="post">
+            {% csrf_token %}
+            <!-- Your existing form fields -->
+            <label for="">Username</label>
+            <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers)" required>
+            <br>
+            <label for="">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" required>
+            <br>
+            <label for="">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name" required>
+            <br>
+            <label for="">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
+            <br>
+            <!-- The container for password inputs -->
+            <div id="password-container">
+                <label for="">Password</label>
+                <input type="password" id="pass1" name="pass1" placeholder="Create a Password" required>
+                <br>
+                <label for="">Confirm Your Password</label>
+                <input type="password" id="pass2" name="pass2" placeholder="Confirm Your Password" required>
+            </div>
+            <br>
+            <p><a href="/signin">Back to Login Page.</a></p>
+            <input type="submit" value="Sign Up">
+        </form>
 
+        <div class="req-container">
+            <!-- Your existing requirements list -->
+            <ul>
+                <li class="req-length">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    &nbsp;6 characters
+                </li>
+                <li class="req-upper">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    &nbsp;one uppercase
+                </li>
+                <li class="req-lower">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    &nbsp;one lowercase
+                </li>
+                <li class="req-digit">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    &nbsp;one digit
+                </li>
+                <li class="req-special">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    &nbsp;one special character
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const passwordInput = document.getElementById('pass1');
+            const passwordVerifyInput = document.getElementById('pass2');
+            const submitButton = document.querySelector('input[type="submit"]');
+            const reqLength = document.querySelector('.req-length');
+            const reqUpper = document.querySelector('.req-upper');
+            const reqLower = document.querySelector('.req-lower');
+            const reqDigit = document.querySelector('.req-digit');
+            const reqSpecial = document.querySelector('.req-special');
+
+            const passwordRequirements = {
+                length: 6,
+                hasUpper: false,
+                hasLower: false,
+                hasDigit: false,
+                hasSpecial: false
+            };
+
+            function checkAndSwitchClasses(has, element) {
+                if (has) {
+                    element.querySelector(".glyphicon").classList.remove("glyphicon-remove-circle", "invalid");
+                    element.querySelector(".glyphicon").classList.add("glyphicon-ok-circle", "valid");
+                    return true;
+                }
+
+                element.querySelector(".glyphicon").classList.remove("glyphicon-ok-circle", "valid");
+                element.querySelector(".glyphicon").classList.add("glyphicon-remove-circle", "invalid");
+                return false;
+            }
+
+            function validatePassword() {
+                const password = passwordInput.value;
+                const passwordVerify = passwordVerifyInput.value;
+
+                // Check if the password meets the requirements
+                passwordRequirements.hasUpper = /[A-Z]/.test(password);
+                passwordRequirements.hasLower = /[a-z]/.test(password);
+                passwordRequirements.hasDigit = /\d/.test(password);
+                passwordRequirements.hasSpecial = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\\/\-|=]/.test(password);
+
+                // Display the password requirements status
+                checkAndSwitchClasses(password.length >= passwordRequirements.length, reqLength);
+                checkAndSwitchClasses(passwordRequirements.hasUpper, reqUpper);
+                checkAndSwitchClasses(passwordRequirements.hasLower, reqLower);
+                checkAndSwitchClasses(passwordRequirements.hasDigit, reqDigit);
+                checkAndSwitchClasses(passwordRequirements.hasSpecial, reqSpecial);
+
+                // Enable or disable the submit button based on password verification
+                submitButton.disabled = password !== passwordVerify || !isPasswordStrong();
+            }
+
+            function isPasswordStrong() {
+                return Object.values(passwordRequirements).every(Boolean);
+            }
+
+            // Listen for input changes on the password and password verification fields
+            passwordInput.addEventListener('input', validatePassword);
+            passwordVerifyInput.addEventListener('input', validatePassword);
+        };
+    </script>
 </body>
 </html>
